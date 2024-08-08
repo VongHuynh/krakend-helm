@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8080
 
 ingress:
   enabled: false
@@ -81,4 +81,6 @@ affinity: {}
 krakendJson: ""
 addlVolumes: []
 addlVolumeMounts: []
-env: []
+env:
+  - name: KRAKEND_PORT
+    value: "8080"
