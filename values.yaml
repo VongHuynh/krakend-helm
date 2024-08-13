@@ -84,3 +84,8 @@ addlVolumeMounts: []
 env:
   - name: KRAKEND_PORT
     value: "8080"
+  # FC_ENABLE=1: Activates Flexible Configuration. You can use 1 or any other value (but 0 won’t turn it off!). The file passed with the --config flag is the base template and contains the references to any other templates.
+  # FC_TEMPLATES=path/to/templates: The path to the templates directory. These are evaluated using the Go templating system.
+  # FC_SETTINGS=path/to/settings: The path to the settings directory. Settings are JSON files that you can use to fill values in the templates, much similar to env files in other applications, but richer as you can use multiple files, structures, and nesting.
+  # FC_PARTIALS=path/to/partials: The path to the partials directory. Partial files are pieces of text that DON’T EVALUATE, and they are inserted in the placeholder “as is”.
+  # FC_OUT=file.json: Saves the resulting configuration after rendering the template, useful for debugging, not required for runtime.
